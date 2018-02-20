@@ -1,0 +1,10 @@
+<% title = username %>
+<div class="tweetArea">
+    <h2 class="title"><%= username %></h2>
+    <% tweets.tweets.forEach(function(tweet){ %>
+        <div class='tweet'>
+            <div class="username"><a href="/user/<%= username %>"><%= username %></a></div>
+            <div class="content"><%= tweet.content %></div>
+        </div>
+    <% }) %>
+</div>

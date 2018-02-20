@@ -94,7 +94,6 @@ module.exports = {
             if(err){
                 res.send(500, {error: 'Database Error'});
             }
-            console.log(userTweets);
             res.view('user', {tweets:userTweets, username:username});
         });
     }
