@@ -1,18 +1,19 @@
 <% title="Radfit Home Page" %>
-<% if(req.session.userName){ %>
-    <form action="/createTweet" method="post">
-        <label for="tweetContent">Content:</label>
-        <textarea name="tweetContent" id="tweetContent" cols="30" rows="4"></textarea>
-        <input type="submit" value="Tweet">
-    </form>
-<% }else{ %>
-    <p>You must be logged in to create a tweet</p>
-<% } %>
-<% if(req.session.ID != undefined){ %>
-    <% tweets.forEach(function(tweet){ %>
-        <div class='tweet'>
-            <%= user.username %> -
-            <%= tweet.content %>
-        </div>
-    <% }) %>
-<% } %>
+<div class="tweetArea">
+    <% if(req.session.userName){ %>
+        <form action="/createTweet" method="post" class="tweetForm">
+            <textarea name="tweetContent" id="tweetContent" cols="30" rows="4"></textarea>
+            <input type="submit" value="Tweet" class="tweetBtn">
+        </form>
+    <% }else{ %>
+        <p>You must be logged in to create a tweet</p>
+    <% } %>
+    <% if(req.session.ID != undefined){ %>
+        <% tweets.forEach(function(tweet){ %>
+            <div class='tweet'>
+                <div class="username"><%= user.username %></div>
+                <div class="content"><%= tweet.content %></div>
+            </div>
+        <% }) %>
+    <% } %>
+</div>

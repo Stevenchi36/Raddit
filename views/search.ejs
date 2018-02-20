@@ -1,6 +1,10 @@
-<% tweets.forEach(function(tweet){ %>
-    <div class='tweet'>
-        <%= tweet.author.username %> -
-        <%= tweet.content %>
-    </div>
-<% }) %>
+<% title="Search Results" %>
+<div class="tweetArea">
+    <h2 class="title">Search Results</h2>
+    <% tweets.forEach(function(tweet){ %>
+        <div class='tweet'>
+            <div class="username"><%= tweet.author.username %></div>
+            <div class="content"><%= tweet.content %></div>
+        </div>
+    <% }) %>
+</div>
