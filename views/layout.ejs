@@ -53,10 +53,10 @@
         var searchInput = document.getElementById('searchString').value;
         if(searchInput.charAt(0) == '#'){
             searchInput = searchInput.substr(1);
-            var url = "http://localhost:1337/searchHastag/" + searchInput;
+            var url = "/searchHastag/" + searchInput;
         }
         else{
-            var url = "http://localhost:1337/search/" + searchInput;
+            var url = "/search/" + searchInput;
         }
         window.location.href = url;
     }
