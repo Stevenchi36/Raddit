@@ -82,6 +82,21 @@ module.exports = {
                 res.redirect('login');
             }, 1000);
         });
+    },
+    // Search for user and display their tweets
+    userSearch: function(req, res){
+        var username = req.params.username;
+        console.log(username);
+        User.findOne({username:username}).populate('tweets', {
+            limit: 20,
+            sort: 'createdAt DESC'
+        }).exec(function(err, userTweets){
+            if(err){
+                res.send(500, {error: 'Database Error'});
+            }
+            console.log(userTweets);
+            res.view('user', {tweets:userTweets, username:username});
+        });
     }
 };
 

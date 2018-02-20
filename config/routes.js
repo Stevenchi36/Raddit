@@ -53,6 +53,7 @@ module.exports.routes = {
   '/login': 'UserController.login',
   '/loginUser': 'UserController.loginUser',
   '/logout': 'UserController.logout',
+  '/user/:username': 'UserController.userSearch',
   // Tweet
   '/createTweet': 'TweetsController.createTweet',
   '/search/:searchString': 'TweetsController.search',

@@ -1,0 +1,7 @@
+{
+    "favorites.resources": [
+        "config\\routes.js",
+        "api\\controllers\\UserController.js",
+        "api\\controllers\\TweetsController.js"
+    ]
+}
