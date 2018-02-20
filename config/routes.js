@@ -32,9 +32,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  }
+  '/': 'TweetsController.listTweets',
 
   /***************************************************************************
   *                                                                          *
@@ -45,5 +43,17 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-
+  // User
+  '/addUser': {
+    view: 'addUser'
+  },
+  '/addUser/:username/:password': 'UserController.registerUser',
+  '/register': 'UserController.registerUser',
+  '/showUsers': 'UserController.showUsers',
+  '/login': 'UserController.login',
+  '/loginUser': 'UserController.loginUser',
+  '/logout': 'UserController.logout',
+  // Tweet
+  '/createTweet': 'TweetsController.createTweet',
+  '/search/:searchString': 'TweetsController.search',
 };
