@@ -47,7 +47,7 @@ module.exports = {
             if(err){
                 res.send(500, {error: 'Database Error'});
             }
-            res.view('search', {tweets:searchResults});
+            res.view('search', {tweets:searchResults, searchString:searchString});
         });
     },
     // Search for hashtags in tweets
@@ -64,7 +64,7 @@ module.exports = {
             if(err){
                 res.send(500, {error: 'Database Error'});
             }
-            res.view('search', {tweets:searchResults});
+            res.view('search', {tweets:searchResults, searchString:searchString});
         });
     },
 };

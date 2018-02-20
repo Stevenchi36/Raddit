@@ -19,7 +19,7 @@ a, a:visited {
 /* Reddit Lower Header Bar */
 .title-bar {
     background-color: cornflowerblue;
-    padding: 30px 15px 0px 15px;
+    padding: 10px 15px 0px 15px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -54,4 +54,3 @@ a, a:visited {
 .title-bar .tab:hover {
     cursor: pointer;
 }
-/* Tweets */
