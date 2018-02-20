@@ -50,7 +50,13 @@
     <script>
     function searchTweets(){
         var searchInput = document.getElementById('searchString').value;
-        var url = "http://localhost:1337/search/" + searchInput;
+        if(searchInput.charAt(0) == '#'){
+            searchInput = searchInput.substr(1);
+            var url = "http://localhost:1337/searchHastag/" + searchInput;
+        }
+        else{
+            var url = "http://localhost:1337/search/" + searchInput;
+        }
         console.log(url);
         window.location.href = url;
     }

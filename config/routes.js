@@ -56,4 +56,5 @@ module.exports.routes = {
   // Tweet
   '/createTweet': 'TweetsController.createTweet',
   '/search/:searchString': 'TweetsController.search',
+  '/searchHastag/:searchString': 'TweetsController.searchHashtag',
 };

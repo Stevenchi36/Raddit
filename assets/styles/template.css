@@ -27,6 +27,18 @@ a, a:visited {
 .title-bar .title-name {
     padding-bottom: 5px;
 }
+.title-bar .search {
+    padding-bottom: 5px;
+}
+.title-bar button {
+    color: lightgray;
+    box-shadow: 1px 1px 3px black;
+    color: black;
+    border: none;
+    padding: 3px 5px;
+    border-radius: 2px;
+    margin-left: 5px;
+}
 .title-bar .login-buttons {
     padding-bottom: 4px;
 }

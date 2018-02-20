@@ -36,6 +36,23 @@ module.exports = {
     // Search for tweets
     search: function(req, res){
         // var searchString = req.body.searchString;
+        var searchString = req.params.searchString;
+        // Make query based on search
+        Tweets.find({
+            content : {
+                'contains' : searchString
+            },
+            sort: 'createdAt DESC'
+        }).populate('author').exec(function(err, searchResults){
+            if(err){
+                res.send(500, {error: 'Database Error'});
+            }
+            res.view('search', {tweets:searchResults});
+        });
+    },
+    // Search for hashtags in tweets
+    searchHashtag: function(req, res){
+        // var searchString = req.body.searchString;
         var searchString = "#" + req.params.searchString;
         // Make query based on search
         Tweets.find({
@@ -49,5 +66,5 @@ module.exports = {
             }
             res.view('search', {tweets:searchResults});
         });
-    }
+    },
 };
